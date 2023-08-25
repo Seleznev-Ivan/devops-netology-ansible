@@ -1,0 +1,7 @@
+vector_version: "0.32.1"
+vector_user: vector
+vector_group: vector
+vector_bin_path: "/usr/bin"
+vector_exec_name: vector
+vector_log_output: journal
+
