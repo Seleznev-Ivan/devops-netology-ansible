@@ -50,4 +50,6 @@ systemctl status clickhouse-server
 clickhouse-client --version
 ```
 
+## Дополнение
+Playbook, который использовался в моей домашней работе доступен [по ссылке](https://github.com/Seleznev-Ivan/devops-netology-ansible/tree/main/08-ansible-02-playbook/playbook)
 
