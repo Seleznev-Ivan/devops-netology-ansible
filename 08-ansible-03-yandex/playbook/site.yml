@@ -42,6 +42,7 @@
   handlers:
     - name: Start vector service
       become: true
+      become_method: sudo
       service:
         name: vector.service
         state: restarted
@@ -62,6 +63,8 @@
         src: vector.toml.j2
         dest: "/etc/vector/vector.toml"
     - name: Configure service Vector
+      become: true
+#      become_method: sudo
       template:
         src: vector.service.j2
         dest: "/etc/systemd/system/vector.service"
@@ -71,12 +74,12 @@
 - name: Install Nginx
   hosts: lighthouse
   handlers:
-    - name: Restart Nginx Service
+    - name: start Nginx Service
       become: true
       service:
         name: nginx
         state: restarted
-  tasks: 
+  tasks:
     - name: Nginx | Install epel-release
       become: true
       yum:
