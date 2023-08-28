@@ -1,0 +1,14 @@
+[Unit]
+Description=Vector
+After=network.target
+
+[Service]
+User={{ vector_user }}
+Group={{ vector_group }}
+ExecStart={{ vector_bin_path }}/{{ vector_exec_name }}
+ExecReload=/bin/kill -HUP $MAINPID
+StandardOutput={{ vector_log_output }}
+StandardError={{ vector_log_output }}
+
+[Install]
+ WantedBy=multiuser.target
