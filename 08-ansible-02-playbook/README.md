@@ -17,6 +17,7 @@ ssh-copy-id root@centos02
 
 ## Clickhouse
 Установка Clickhouse производится на все хосты, указанные в инвенторе-файле  `inventory/prod.yml`
+
 Задачи:
 * Get clickhouse distrib - скачивается дистрибутив версии 22.3.3.44, который указан в переменных  `group_vars/clickhouse/vars.yml`
 * Install clickhouse packages - устанавливается скачанный дистрибутив Clickhouse.
@@ -25,10 +26,12 @@ ssh-copy-id root@centos02
 
 ## Vector
 Установка Vector производится на все хосты, указанные в инвенторе-файле  `inventory/prod.yml`
+
 Задачи:
 * Get vector distrib - скачивается дистрибутив версии 0.32.1, который указан в переменных  `group_vars/vector/vars.yml`
-* Install vector packages - устанаю шаблон для запуска сервиса `vector.service`
+* Install vector packages - устанавливаю шаблон для запуска сервиса `vector.service`
 Переменные, используемые в шаблоне указываю в `group_vars/vector/vars.yml`
+
 Использовал следующие переменные:
 - vector_version
 - vector_user
@@ -40,11 +43,13 @@ ssh-copy-id root@centos02
 
 ## Проверка установленных компонентов на втором сервере (centos02):
 
-Теперь проверяю установленные с помощью Ansible сервисы с помощью следующих команд:
+После успешного выполнения плея проверяю установленные с помощью Ansible сервисы с помощью следующих команд:
 ```bash
 vector --version
 systemctl status clickhouse-server
 clickhouse-client --version
 ```
 
+## Дополнение
+Playbook, который использовался в моей домашней работе доступен [по ссылке](https://github.com/Seleznev-Ivan/devops-netology-ansible/tree/main/08-ansible-02-playbook/playbook)
 
