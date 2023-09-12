@@ -7,4 +7,3 @@ Playbook, который использовался в моей домашней
 
 Ссылка на репозиторий [Vector](https://github.com/Seleznev-Ivan/vector-role)
 
-![roles](https://github.com/Seleznev-Ivan/devops-netology/blob/main/img/07-ter-04_roles.jpg)
