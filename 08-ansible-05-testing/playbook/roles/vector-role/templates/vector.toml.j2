@@ -1,0 +1,19 @@
+---
+data_dir = {{ vector_data_dir }}
+
+sources:
+  dummy_logs:
+    type: demo_logs
+    format: syslog
+    interval: 1
+
+
+# Input data. Change me to a valid input source.
+[sources.in]
+  type = "stdin"
+
+# Output data
+[sinks.out]
+  inputs   = ["in"]
+  type     = "console"
+  encoding = "text"

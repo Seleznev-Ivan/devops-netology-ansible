@@ -1,0 +1,6 @@
+---
+# vars file for roles/lightHouse-role
+lighthouse_vcs: "https://github.com/VKCOM/lighthouse.git"
+lighthouse_dir: "/usr/share/lighthouse"
+lighthouse_port: 9000
+

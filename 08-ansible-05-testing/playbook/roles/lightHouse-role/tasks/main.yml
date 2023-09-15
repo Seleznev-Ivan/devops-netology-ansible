@@ -1,0 +1,47 @@
+---
+# tasks file for roles/lightHouse-role
+
+    - name: Nginx | Install epel-release
+      become: true
+      yum:
+        name: epel-release
+        state: present
+      tags:
+        - get_nginx
+
+    - name: Nginx | Install Nginx
+      become: true
+      yum:
+        name: nginx
+        state: present
+        update_cache: true
+      notify: Start Nginx service
+      tags:
+        - get_nginx
+
+    - name: Lighthouse | Install git
+      become: true
+      yum:
+        name: git
+        state: present
+      tags:
+        - install_git
+
+    - name: Lighthouse | Copy from git
+      become: true
+      git:
+        repo: "{{ lighthouse_vcs }}"
+        version: master
+        dest: "{{ lighthouse_dir }}"
+      tags:
+        - get_lighthouse
+
+    - name: Lighthouse | Create config
+      become: true
+      template:
+        src: lighthouse.config.j2
+        dest: /etc/nginx/conf.d/lighthouse.conf
+        mode: 0644
+      notify: Nginx restart
+      tags:
+        - configure_lighthouse
