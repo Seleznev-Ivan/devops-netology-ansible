@@ -1,9 +1,17 @@
+#---
+## handlers file for vector-role
+#
+#- name: Start vector service
+#  become: true
+#  become_method: sudo
+#  service:
+#    name: vector.service
+#    state: restarted
 ---
 # handlers file for vector-role
+    - name: Start Vector service
+      become: true
+      service:
+        name: vector
+        state: restarted
 
-- name: Start vector service
-  become: true
-  become_method: sudo
-  service:
-    name: vector.service
-    state: restarted

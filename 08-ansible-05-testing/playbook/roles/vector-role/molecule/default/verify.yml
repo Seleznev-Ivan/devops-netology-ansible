@@ -8,3 +8,7 @@
   - name: Example assertion
     assert:
       that: true
+  - name: Check vector config
+    assert:
+      that: 
+        shell: vector validate --no-environment --config-yaml /etc/vector/vector.yaml 
