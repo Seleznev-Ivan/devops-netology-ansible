@@ -57,6 +57,7 @@
 
 После выполнения у вас должно получится два сценария molecule и один tox.ini файл в репозитории. Не забудьте указать в ответе теги решений Tox и Molecule заданий. В качестве решения пришлите ссылку на  ваш репозиторий и скриншоты этапов выполнения задания. 
 
+
 Добавил тег [1.2](https://github.com/Seleznev-Ivan/devops-netology-ansible/releases/tag/1.2)
 
 [Репозиторий](https://github.com/Seleznev-Ivan/devops-netology-ansible/tree/main/08-ansible-05-testing/playbook/roles/vector-role)
